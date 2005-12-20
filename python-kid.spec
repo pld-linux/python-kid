@@ -1,15 +1,16 @@
 Summary:	Kid - A simple and pythonic XML template language
 Summary(pl):	Kid - prosty i pythonopodobny jêzyk szablonów XML
 Name:		python-kid
-Version:	0.6.4
+Version:	0.8
 Release:	1
 Group:		Development/Languages/Python
 License:	X11/MIT
-Source0:	http://lesscode.org/dist/kid/kid-%{version}.tar.gz
-# Source0-md5:	e7e74a4387deff7cf473274dac442b36
+Source0:	http://lesscode.org/dist/kid/%{version}/kid-%{version}.tar.gz
+# Source0-md5:	3ebc1df08ceb636fb5102fc3a1f6448e
 URL:		http://kid.lesscode.org/
 BuildRequires:	python-devel
 BuildRequires:	python-elementtree
+BuildRequires:	python-setuptools
 %pyrequires_eq  python-modules
 Requires:	python-elementtree
 BuildArch:	noarch
@@ -37,7 +38,10 @@ python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python setup.py install --root=$RPM_BUILD_ROOT
+python setup.py install \
+	--single-version-externally-managed \
+	--optimize=2 \
+	--root=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -46,4 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc COPYING HISTORY README doc/ examples/
 %attr(755,root,root) %{_bindir}/kid*
-%{py_sitescriptdir}/kid
+%{py_sitescriptdir}/kid*
