@@ -2,7 +2,7 @@ Summary:	Kid - A simple and pythonic XML template language
 Summary(pl.UTF-8):	Kid - prosty i pythonopodobny język szablonów XML
 Name:		python-kid
 Version:	0.9.4
-Release:	3
+Release:	4
 Group:		Development/Languages/Python
 License:	X11/MIT
 Source0:	http://www.kid-templating.org/dist/%{version}/kid-%{version}.tar.gz
