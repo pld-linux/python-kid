@@ -8,6 +8,7 @@ License:	X11/MIT
 Source0:	http://www.kid-templating.org/dist/%{version}/kid-%{version}.tar.gz
 # Source0-md5:	2122ee32062079418db34cfd5fc15c37
 URL:		http://www.kid-templating.org/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-modules
 BuildRequires:	python-setuptools
